@@ -18,7 +18,7 @@ Pony.options = {
 put '/email' do
   email = params[:email]
   js = JSON.parse(request.body.read)
-  if !js.empty? && js['data']
+  if !js.empty? && js['data'] && !js['data'].empty?
     Pony.mail(
       to: email,
       from: "td2mail <noreply@treasure-data.com>",
